@@ -1,0 +1,123 @@
+/*GALLERY STYLES*/
+
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+.gallery {
+    padding: 50px 0;
+}
+.galleryTutorials {
+    background: #F9FCFC;
+}
+.galleryItems {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        width: calc(25% - 20px);
+        border: 1px solid rgba(194, 193, 193, 39);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px;
+        box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        &:hover {
+            background: rgba(237, 248, 246, 0.97);
+            border: 1px solid #3598A5;
+        }
+        img {
+            width: 100%;
+        }
+        .courseType {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 0 20px;
+        }
+        h4 {
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 0;
+            padding: 0 20px;
+        }
+        .date {
+            text-transform: capitalize;
+            font-weight: 500;
+            color: #9D9C9C;
+            padding: 0 20px;
+        }
+        i {
+            font-size: 0.1rem;
+        }
+    }
+    .galleryBox1 {
+        .courseType {
+            color: #2AC5FB;
+        }
+    }
+    .galleryBox2 {
+        .courseType {
+            color: #FE1D62;
+        }
+    }
+    .galleryBox3 {
+        .courseType {
+            color: #B6D546;
+        }
+    }
+    .galleryBox4 {
+        .courseType {
+            color: #3B9FB3;
+        }
+    }
+    .galleryBox5 {
+        .courseType {
+            color: #0CAD6B;
+        }
+    }
+    .galleryBox6 {
+        .courseType {
+            color: #714AF2;
+        }
+    }
+    .galleryBox7 {
+        .courseType {
+            color: #BF3761;
+        }
+    }
+}
+
+/*GALLERY MEDIA QUERIES*/
+@include mediaQuery(999px) {
+    .gallery {
+        padding: 20px 0
+    }
+    .galleryItems {
+        li {
+            width: calc(33% - 20px);
+        }
+    }
+}
+
+@include mediaQuery(767px) {
+    .galleryItems {
+        li {
+            width: calc(50% - 20px);
+        }
+    }
+}
+
+// @include mediaQuery(450px) {
+//     .galleryItems {
+//         li {
+//             width: 100%;
+//         }
+//     }
+// }

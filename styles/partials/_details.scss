@@ -1,0 +1,48 @@
+/*DETAILS SECTION STYLES*/
+
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+
+.details {
+    margin-bottom: 50px;
+}
+.detailDescription {
+    display: flex;
+    justify-content: space-between;
+}
+.detailPoint {
+    width: 25%;
+    text-align: center;
+    h3 {
+        font-size: 2.2rem;
+        color: #333;
+    }
+    p {
+        font-size: 1.6rem;
+        color: #808080;
+        line-height: 28px;
+    }
+}
+
+/*DETAILS SECTION MEDIA QUERIES*/
+@include mediaQuery(1200px) {
+    .detailPoint {
+        width: 50%;
+    }
+    .detailDescription {
+        flex-wrap: wrap;
+    }
+}
+
+@include mediaQuery(560px) {
+    .detailDescription {
+        flex-direction: column;
+    }
+    .detailPoint {
+        width: 100%;
+    }
+}

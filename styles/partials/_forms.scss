@@ -1,0 +1,108 @@
+/*FORM STYLES*/
+
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+/*SUBSCRIBE SECTION STYLES*/
+.subscribeBanner {
+    background: #59DAC3;
+    text-align: center;
+    padding: 50px 0;
+    h2 {
+        color: #FFFEFE;
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 0;
+        line-height: 40px;
+        span {
+            font-weight: normal;
+        }
+    }
+}
+
+/*SEARCH SECTION STYLES*/
+.courseSearch {
+    background: rgba(89, 218, 195, 0.7);
+    text-align: center;
+    padding: 40px 0;
+    h1 {
+        font-size: 4.8rem;
+        color: #FFF;
+        font-weight: 700;
+        text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+        margin-top: 0;
+    }
+    .dividingBorder {
+        border: 0.5px solid #FFF;
+        margin: 0 auto;
+        width: 10%;
+    }
+    p {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #FFF;
+        text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    select {
+        color: #909090;
+        font-size: 1.5rem;
+        padding: 12px 50px 12px 10px;
+        border-radius: 4px 0 0 4px;
+        cursor: pointer;
+        border: none;
+        appearance: none;
+    }
+    input {
+        color: #909090;
+        font-size: 1.5rem;
+        padding: 12px 0 12px 10px;
+        width: 265px;
+        border-radius: 4px;
+        border: none;
+    }
+}
+.courseSearch__selector--field {
+    display: flex;
+}
+button.selectArrow {
+    color: #55CEB8;
+    background: #FFF;
+    border: none;
+    border-left: 1px solid #55CEB8;
+    width: 35px;
+}
+.courseSearch__selector {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*FORM MEDIA QUERIES*/
+@include mediaQuery(1200px) {
+    .courseSearch__selector {
+        flex-wrap: wrap;
+    }
+}
+
+@include mediaQuery(1183px) {
+    .courseSearch {
+        .submit {
+        margin-top: 15px;
+        }
+    }
+}
+
+@include mediaQuery(950px) {
+    .courseSearch__selector {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        select, input, button {
+            margin: 15px 0;
+        }
+    }
+}

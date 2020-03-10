@@ -1,0 +1,49 @@
+/*SECTION HEADING STYLES*/
+
+@mixin fontStyle($sizeValue, $fontColor, $weightValue) {
+    font-size: $sizeValue;
+    color: $fontColor;
+    font-weight: $weightValue;
+    text-align: center;
+}
+
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+.heading {
+    width: 100%;
+    padding: 0 25%;
+    margin: 50px 0;
+    h1 {
+        @include fontStyle(4.8rem, #1C1C1C, 400);
+        margin-bottom: 0;
+    }
+    p {
+        @include fontStyle(1.7rem, #808080, 400);
+        
+    }
+    a {
+        @include fontStyle(1.8rem, #55CEB8, 600);
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+/*SECTION HEADINGS MEDIA QUERIES*/
+@include mediaQuery(1200px) {
+    .heading {
+        padding: 0;
+    }
+}
+
+@include mediaQuery(560px) {
+    .heading {
+        h1 { 
+            font-size: 3rem;
+            margin: 0;
+        }
+    }
+}

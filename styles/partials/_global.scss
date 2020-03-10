@@ -1,0 +1,63 @@
+/*GLOBAL STYLES*/
+
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+}
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+.wrapper2 {
+    width: 100%;
+    margin: 0 auto;
+}
+.button {
+    margin-top: 25px;
+    a {
+        color: #FFFEFE;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        border: 0.5px solid #FFFEFE;
+        border-radius: 2px;
+        &:hover {
+            background: #FFF;
+            color: rgb(89, 218, 195);
+        }
+    }
+}
+.submit {
+    color: #FFFEFE;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    border: 0.5px solid #FFFEFE;
+    border-radius: 2px;
+    background: none;
+    &:hover {
+        background: #FFF;
+        color: rgb(89, 218, 195);
+    }
+}
+
+/*GLOBAL MEDIA QUERIES*/
+@include mediaQuery(767px) {
+    .wrapper {
+        width: 100%;
+    }
+}

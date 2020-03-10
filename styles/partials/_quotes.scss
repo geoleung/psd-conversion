@@ -1,0 +1,124 @@
+/*QUOTES SECTION STYLING*/
+@mixin mediaQuery($screenSize) {
+    @media (max-width: $screenSize) {
+        @content;
+    }
+}
+
+.quotes__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+li {
+    width: 48%;
+    margin-bottom: 20px;
+    .quoteBox1 {
+        border: 2.5px dotted #55CEB8;
+        h4 {
+            color: #55CEB8;
+        }
+    }
+    .quoteBox2 {
+        border: 2.5px dotted #B6D546;
+        h4 {
+            color: #B6D546;
+        }
+    }
+    .quoteBox3 {
+        border: 2.5px dotted #F74078;
+        h4 {
+            color: #F74078;
+        }
+    }
+    .quoteBox4 {
+        border: 2.5px dotted #3B9FB3;
+        h4 {
+            color: #3B9FB3;
+        }
+    }
+}
+.quoteBox {
+    display: flex;
+    img {
+        width: 50%;
+        margin: 30px;
+    }
+    h4 {
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+    .role {
+        color: #9D9C9C;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    .quoteContent {
+        color: #808080;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
+/*QUOTES MEDIA QUERIES*/
+@include mediaQuery(1366px) {
+    .quoteBox {
+        img {
+            margin: 20px;
+        }
+        h4 {
+            margin: 10px 0;
+        }
+    }
+}
+
+@include mediaQuery(1200px) {
+    .quoteBox {
+        img {
+            margin: 30px;
+        }
+        h4 {
+            margin: 26px 0;
+        }
+    }
+    .quotes__list {
+        li {
+            width: 100%;
+        }
+    }
+    .quoteBox1 {
+        margin-right: 50px;
+    }
+    .quoteBox2 {
+        margin-left: 50px;
+    }
+    .quoteBox3 {
+        margin-right: 50px;
+    }
+    .quoteBox4 {
+        margin-left: 50px;
+    }
+}
+
+@include mediaQuery(767px) {
+    .quoteBox {
+        margin: 0;
+    }
+}
+
+@include mediaQuery(560px) {
+    .quoteBox {
+        img {
+            margin: 10px;
+        }
+        h4 {
+            margin: 10px 0;
+        }
+        .quoteContent {
+            font-size: 1.3rem;
+        }
+    }
+}
